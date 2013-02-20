@@ -7,11 +7,11 @@ add_action("customize_register",function ($wpc){
     "priority"  => 0
   ));
 
-
   $wpc->add_setting("mytheme_options[heading]",array(
     "default"    => "Default Heading",
     "type"       => "option",
-    "capability" => "edit_theme_options"
+    "capability" => "edit_theme_options",
+    "transport"  => "postMessage"
   ));
   
   $wpc->add_setting("mytheme_options[blue]",array(
@@ -52,7 +52,11 @@ add_action("customize_register",function ($wpc){
       "The World Ends"    => "The World Ends"
     )
   ));
-  
+
+  # Remove default sections
+  $wpc->remove_section("title_tagline");
+  $wpc->remove_section("static_front_page");
+
   
 });
 
