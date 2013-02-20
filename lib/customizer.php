@@ -11,7 +11,6 @@ add_action("customize_register",function ($wpc){
     "default"    => "Default Heading",
     "type"       => "option",
     "capability" => "edit_theme_options",
-    "transport"  => "postMessage"
   ));
   
   $wpc->add_setting("mytheme_options[blue]",array(
